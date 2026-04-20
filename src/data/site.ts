@@ -188,7 +188,7 @@ export const workExperience: TimelineEntry[] = [
   },
   {
     id: 'grc-tutor',
-    title: 'CS, Math, Physics & Chemistry Tutor ... + TA',
+    title: 'CS, Math, Physics & Chemistry Tutor + TA',
     org: 'Green River College Tutoring Centers',
     period: 'Apr 2024 — Jun 2025',
     location: 'Auburn, WA',
