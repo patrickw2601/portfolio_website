@@ -1,5 +1,5 @@
 # Build the Vite app and publish dist/ to GitHub Pages.
-# Repo → Settings → Pages → Build and deployment → Source: "GitHub Actions"
+# Repo → Settings → Pages → Source: "GitHub Actions"
 
 name: Deploy to GitHub Pages
 
@@ -28,14 +28,19 @@ jobs:
           node-version: '22'
           cache: npm
 
+      - name: Verify lockfile
+        run: test -f package-lock.json && node -v && npm -v
+
       - name: Install
         run: npm ci
 
       - name: Build
         run: npm run build
         env:
-          # Must match repo name for https://<user>.github.io/<repo>/
           VITE_BASE_PATH: /${{ github.event.repository.name }}/
+
+      - name: Verify dist
+        run: test -d dist && test -f dist/index.html && ls -la dist
 
       - uses: actions/configure-pages@v5
 
