@@ -1,11 +1,14 @@
-/** Edit copy, links, and lists here. Placeholder entries use `isPlaceholder: true`. */
+/**
+ * Edit copy, links, and lists here. Placeholder entries use `isPlaceholder: true`.
+ * Optional `logoSrc` on roles / schools: path under `public/` (e.g. `logos/uw.png`); replace files in `public/logos/`.
+ */
 
 export const site = {
   name: 'Patrick Roland Wijaya',
   shortName: 'Patrick',
   tagline: 'B.S. Computer Science · Class of 2027',
   school:
-    'University of Washington — Paul G. Allen School of Computer Science & Engineering',
+    'University of Washington, Seattle — Paul G. Allen School of Computer Science & Engineering',
   locations: 'Seattle, WA · Jakarta, IDN',
   heroLead:
     'Passionate builder focused on AI systems, full-stack products, cybersecurity, and cloud software.',
@@ -17,7 +20,7 @@ export const site = {
     { label: 'GitHub', href: 'https://github.com/' },
   ] as { label: string; href: string }[],
   about:
-    'Tech enthusiast exploring the edges of intelligent systems and reliable software. Currently pursuing a Bachelor of Science in Computer Science at the University of Washington.',
+    'Tech enthusiast exploring the edges of intelligent systems and reliable software. Currently pursuing a Bachelor of Science in Computer Science at the University of Washington, Seattle.',
   certifications: [
     'Meta — Django Web Framework, The Full Stack, APIs, Python Data Analytics',
     'freeCodeCamp — Responsive Web Design, JavaScript Algorithms & Data Structures',
@@ -105,22 +108,27 @@ export type TimelineEntry = {
   summary: string
   bullets?: string[]
   tags?: string[]
+  /** Image under `public/`, e.g. `logos/aws.svg`. Replace with your own logo or photo. */
+  logoSrc?: string
+  /** Use `cover` for portrait photos; default is `contain` for logos. */
+  logoFit?: 'contain' | 'cover'
   isPlaceholder?: boolean
 }
 
 export const workExperience: TimelineEntry[] = [
   {
     id: 'aws-sde',
-    title: 'Incoming Software Development Engineer Intern',
+    title: 'Software Development Engineer Intern',
     org: 'Amazon Web Services (AWS)',
     period: 'Jun 2026 — Sep 2026',
     location: 'United States',
     summary: 'Incoming summer 2026.',
+    logoSrc: 'logos/aws.png',
   },
   {
     id: 'uw-dining',
     title: 'Dining Assistant',
-    org: 'University of Washington — Student Athlete Dining Center',
+    org: 'University of Washington, Seattle — Student Athlete Dining Center',
     period: 'Sep 2025 — present',
     location: 'Seattle, WA',
     summary:
@@ -130,6 +138,7 @@ export const workExperience: TimelineEntry[] = [
       'Coordinates with kitchen and front-of-house so athletes move through quickly between practices.',
     ],
     tags: ['Customer service', 'Teamwork', 'Operations'],
+    logoSrc: 'logos/uw.png',
   },
   {
     id: 'deepiri',
@@ -154,6 +163,7 @@ export const workExperience: TimelineEntry[] = [
       'PyTorch',
       'GPU tracing',
     ],
+    logoSrc: 'logos/deepiri.png',
   },
   {
     id: 'sisindokom',
@@ -175,6 +185,7 @@ export const workExperience: TimelineEntry[] = [
       'Flask',
       'AWS',
     ],
+    logoSrc: 'logos/sisindokom.png',
   },
   {
     id: 'manulife',
@@ -185,6 +196,7 @@ export const workExperience: TimelineEntry[] = [
     summary:
       'Developed campaign websites and supported internal IT operations and device management.',
     tags: ['Python', 'JavaScript', 'WordPress', 'React', 'Bootstrap'],
+    logoSrc: 'logos/manulife.png',
   },
   {
     id: 'grc-tutor',
@@ -195,6 +207,7 @@ export const workExperience: TimelineEntry[] = [
     summary:
       'Tutored OOP & DSA, engineering physics, calculus through statistics, and quantum / thermochemistry.',
     tags: ['Java', 'JUnit', 'Python', 'NumPy'],
+    logoSrc: 'logos/grc.png',
   },
   {
     id: 'bookstore',
@@ -205,6 +218,7 @@ export const workExperience: TimelineEntry[] = [
     summary:
       'Tracked inventory in Excel, produced reports, and helped surface insights to improve sales.',
     tags: ['Microsoft Excel'],
+    logoSrc: 'logos/grc.png',
   },
 ]
 
@@ -222,6 +236,7 @@ export const organizations: TimelineEntry[] = [
       'Integrates AI tooling to speed up content iteration and accessibility checks.',
     ],
     tags: ['React', 'HTML', 'CSS', 'AI'],
+    logoSrc: 'logos/permias.png',
   },
   {
     id: 'ptk',
@@ -241,6 +256,7 @@ export const organizations: TimelineEntry[] = [
       'Public speaking',
       'Strategic planning',
     ],
+    logoSrc: 'logos/grc.png',
   },
   {
     id: 'iso',
@@ -260,6 +276,7 @@ export const organizations: TimelineEntry[] = [
       'Event coordination',
       'Public speaking',
     ],
+    logoSrc: 'logos/grc.png',
   },
   {
     id: 'bizclub',
@@ -274,6 +291,7 @@ export const organizations: TimelineEntry[] = [
       'Built relationships with 10+ founders and operators to power programming.',
     ],
     tags: ['Networking', 'Proposal writing', 'Event coordination'],
+    logoSrc: 'logos/grc.png',
   },
 ]
 
@@ -287,17 +305,22 @@ export type EducationBlock = {
   gpa?: string
   honors?: string[]
   courses?: string[]
+  /** Image under `public/`, e.g. `logos/edu-uw.svg`. */
+  logoSrc?: string
+  /** Overrides default alt text (`{school} logo`). */
+  logoAlt?: string
+  logoFit?: 'contain' | 'cover'
 }
 
 export const education: EducationBlock[] = [
   {
     id: 'uw',
-    school: 'University of Washington',
+    school: 'University of Washington, Seattle',
     unit: 'Paul G. Allen School of Computer Science & Engineering',
     period: '2025 — 2027',
     location: 'Seattle, WA',
     degree: 'Bachelor of Science — Computer Science',
-    gpa: '3.65 cumulative',
+    gpa: '3.65 / 4.0',
     honors: ["DubHacks Shark Tank 2025 Winner", "Dean's List"],
     courses: [
       'CSE 311 — Foundations of Computing I',
@@ -310,6 +333,7 @@ export const education: EducationBlock[] = [
       'CSE 473 — Artificial Intelligence',
       'CSE 484 — Computer Security',
     ],
+    logoSrc: 'logos/uw.png',
   },
   {
     id: 'grc',
@@ -334,6 +358,7 @@ export const education: EducationBlock[] = [
       'PHYS 221-223 — Engineering Physics sequence',
       'ENGR 106 — Introduction to Engineering Problems',
     ],
+    logoSrc: 'logos/grc.png',
   },
   {
     id: 'pelangi',
@@ -347,6 +372,9 @@ export const education: EducationBlock[] = [
       'Best student awards across 5+ subjects',
       'Multiple regional academic competitions',
     ],
+    logoSrc: 'logos/edu-pelangi.png',
+    logoAlt:
+      'Pelangi Kasih logo — students, open book, rainbow arch, motto Membina Dengan Kasih',
   },
 ]
 

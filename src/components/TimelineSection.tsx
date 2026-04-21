@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import type { TimelineEntry } from '../data/site'
 import { useRevealOnScroll } from '../lib/useRevealOnScroll'
+import { InstitutionLogo } from './InstitutionLogo'
 import { MotionDivider } from './MotionDivider'
 import { Reveal } from './Reveal'
 
@@ -176,45 +177,55 @@ export function TimelineSection({
 
 function renderEntry(entry: TimelineEntry) {
   const tags = entry.tags && entry.tags.length > 0 ? entry.tags : null
+  const logo = entry.logoSrc ? (
+    <InstitutionLogo
+      logoSrc={entry.logoSrc}
+      alt={`${entry.org} logo`}
+      fit={entry.logoFit}
+    />
+  ) : null
   return (
-    <>
-      <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
-        <div>
-          <p className="text-xs font-semibold text-ink-600">{entry.org}</p>
-          <h3 className="mt-1 font-display text-lg font-semibold text-ink-900 md:text-xl">{entry.title}</h3>
+    <div className="flex gap-4 md:gap-5">
+      {logo}
+      <div className="min-w-0 flex-1">
+        <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
+          <div>
+            <p className="text-xs font-semibold text-ink-600">{entry.org}</p>
+            <h3 className="mt-1 font-display text-lg font-semibold text-ink-900 md:text-xl">{entry.title}</h3>
+          </div>
+          <p className="text-xs font-semibold tabular-nums text-ink-600 md:text-right">
+            {entry.period}
+            <br />
+            {entry.location}
+          </p>
         </div>
-        <p className="text-xs font-semibold tabular-nums text-ink-600 md:text-right">
-          {entry.period}
-          <br />
-          {entry.location}
-        </p>
+        <p className="mt-3 text-[15px] leading-relaxed text-ink-800 md:text-base">{entry.summary}</p>
+        {entry.bullets ? (
+          <ul className="mt-3 space-y-1.5 text-[15px] text-ink-800 md:text-base">
+            {entry.bullets.map((bullet) => (
+              <li key={bullet} className="flex gap-2">
+                <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-ink-900" aria-hidden />
+                <span>{bullet}</span>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        {tags ? (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full border border-[rgb(12_12_12/0.1)] bg-ink-900/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-ink-800"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        ) : null}
+        {entry.isPlaceholder ? (
+          <p className="mt-2 text-[10px] font-medium uppercase tracking-wider text-ink-500">Empty slot · site.ts</p>
+        ) : null}
       </div>
-      <p className="mt-3 text-[15px] leading-relaxed text-ink-800 md:text-base">{entry.summary}</p>
-      {entry.bullets ? (
-        <ul className="mt-3 space-y-1.5 text-[15px] text-ink-800 md:text-base">
-          {entry.bullets.map((bullet) => (
-            <li key={bullet} className="flex gap-2">
-              <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-ink-900" aria-hidden />
-              <span>{bullet}</span>
-            </li>
-          ))}
-        </ul>
-      ) : null}
-      {tags ? (
-        <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full border border-[rgb(12_12_12/0.1)] bg-ink-900/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-ink-800"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      ) : null}
-      {entry.isPlaceholder ? (
-        <p className="mt-2 text-[10px] font-medium uppercase tracking-wider text-ink-500">Empty slot · site.ts</p>
-      ) : null}
-    </>
+    </div>
   )
 }

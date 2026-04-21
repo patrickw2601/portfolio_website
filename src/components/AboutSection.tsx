@@ -7,7 +7,6 @@ import { Reveal } from './Reveal'
 const spring = { type: 'spring' as const, stiffness: 64, damping: 10, mass: 0.65 }
 
 export function AboutSection() {
-  const certsShort = site.certifications.slice(0, 4).join(' · ')
   const reduce = useReducedMotion()
   const { ref: interestsRef, visible: interestsVis } = useRevealOnScroll<HTMLUListElement>()
   const { ref: blocksRef, visible: blocksVis } = useRevealOnScroll<HTMLDivElement>()
@@ -71,7 +70,13 @@ export function AboutSection() {
       <div className="flow-section mt-14 md:mt-16">
         <Reveal>
           <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-ink-600">Certs</p>
-          <p className="mt-3 text-sm leading-snug text-ink-800">{certsShort} …</p>
+          <ul className="mt-3 list-none space-y-2 text-sm leading-relaxed text-ink-800">
+            {site.certifications.map((line) => (
+              <li key={line} className="border-l-2 border-[var(--color-line)] pl-3">
+                {line}
+              </li>
+            ))}
+          </ul>
         </Reveal>
 
         {reduce ? (

@@ -38,10 +38,15 @@ export function Hero() {
   const tilt = useTransform(smoothProgress, [0, 1], [0, -3])
 
   return (
-    <section
+    <motion.section
       ref={ref}
       id="top"
       className="relative flex flex-1 flex-col justify-end pb-10 pt-28 md:pb-16 md:pt-32"
+      style={
+        reduce
+          ? { opacity, y, rotate, scale }
+          : { opacity, y, rotate, scale, filter: blurRead }
+      }
     >
       {!reduce ? (
         <motion.div
@@ -51,14 +56,7 @@ export function Hero() {
         />
       ) : null}
 
-      <motion.div
-        className="flow-section"
-        style={
-          reduce
-            ? { opacity, y, rotate, scale }
-            : { opacity, y, rotate, scale, filter: blurRead }
-        }
-      >
+      <div className="flow-section">
         <MotionDivider className="mb-10" />
 
         <motion.p
@@ -135,22 +133,22 @@ export function Hero() {
             </motion.span>
           ))}
         </motion.div>
+      </div>
 
-        <MarqueeSkills bleed className="mt-10" />
+      <MarqueeSkills className="mt-10 w-full shrink-0" />
 
-        <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-[var(--color-line)] pt-10 sm:grid-cols-3 lg:grid-cols-5 md:mt-14">
-          {site.stats.map((item) => (
-            <div key={item.label} className="transition-transform duration-200 hover:-translate-y-0.5">
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-ink-600">
-                {item.label}
-              </p>
-              <p className="mt-1 font-display text-2xl font-semibold tabular-nums text-ink-900">
-                {item.value}
-              </p>
-            </div>
-          ))}
-        </div>
-      </motion.div>
-    </section>
+      <div className="flow-section mt-12 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-[var(--color-line)] pt-10 sm:grid-cols-3 lg:grid-cols-5 md:mt-14">
+        {site.stats.map((item) => (
+          <div key={item.label} className="transition-transform duration-200 hover:-translate-y-0.5">
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-ink-600">
+              {item.label}
+            </p>
+            <p className="mt-1 font-display text-2xl font-semibold tabular-nums text-ink-900">
+              {item.value}
+            </p>
+          </div>
+        ))}
+      </div>
+    </motion.section>
   )
 }
