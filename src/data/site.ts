@@ -9,7 +9,7 @@ export const site = {
   tagline: 'B.S. Computer Science · Class of 2027',
   school:
     'University of Washington, Seattle — Paul G. Allen School of Computer Science & Engineering',
-  locations: 'Seattle, WA · Jakarta, IDN',
+  locations: 'Seattle, Washington, United States · Jakarta, Indonesia',
   heroLead:
     'Passionate builder focused on AI systems, full-stack products, cybersecurity, and cloud software.',
   resumeUrl: 'https://www.overleaf.com/read/zzqmnktnrpjf#90fd0f',
@@ -121,7 +121,7 @@ export const workExperience: TimelineEntry[] = [
     title: 'Software Development Engineer Intern',
     org: 'Amazon Web Services (AWS)',
     period: 'Jun 2026 — Sep 2026',
-    location: 'United States',
+    location: 'Seattle, Washington, United States',
     summary: 'Incoming summer 2026.',
     logoSrc: 'logos/aws.png',
   },
@@ -130,7 +130,7 @@ export const workExperience: TimelineEntry[] = [
     title: 'Dining Assistant',
     org: 'University of Washington, Seattle — Student Athlete Dining Center',
     period: 'Sep 2025 — present',
-    location: 'Seattle, WA',
+    location: 'Seattle, Washington, United States',
     summary:
       'Supports day-to-day dining operations for student-athletes: service flow, station readiness, and a high-traffic meal environment.',
     bullets: [
@@ -145,7 +145,7 @@ export const workExperience: TimelineEntry[] = [
     title: 'AI Software Engineer Intern',
     org: 'Deepiri',
     period: 'Dec 2025 — Apr 2026',
-    location: 'Pittsburgh, PA (remote)',
+    location: 'Pittsburgh, Pennsylvania, United States (remote)',
     summary:
       'Built backend microservices integrated with LangChain / LangGraph agents for a SaaS product.',
     tags: [
@@ -170,7 +170,7 @@ export const workExperience: TimelineEntry[] = [
     title: 'Software Engineer Intern',
     org: 'PT. Sisindokom Lintasbuana',
     period: 'Jul 2025 — Aug 2025',
-    location: 'Jakarta, IDN',
+    location: 'Jakarta, Indonesia',
     summary:
       'Shipped full-stack AI applications adopted by some of the largest enterprises in the region.',
     tags: [
@@ -192,7 +192,7 @@ export const workExperience: TimelineEntry[] = [
     title: 'Information Technology Intern',
     org: 'PT. Manulife Indonesia (XO Network)',
     period: 'Jul 2024 — Aug 2025',
-    location: 'Jakarta, IDN',
+    location: 'Jakarta, Indonesia',
     summary:
       'Developed campaign websites and supported internal IT operations and device management.',
     tags: ['Python', 'JavaScript', 'WordPress', 'React', 'Bootstrap'],
@@ -203,7 +203,7 @@ export const workExperience: TimelineEntry[] = [
     title: 'CS, Math, Physics & Chemistry Tutor + TA',
     org: 'Green River College Tutoring Centers',
     period: 'Apr 2024 — Jun 2025',
-    location: 'Auburn, WA',
+    location: 'Auburn, Washington, United States',
     summary:
       'Tutored OOP & DSA, engineering physics, calculus through statistics, and quantum / thermochemistry.',
     tags: ['Java', 'JUnit', 'Python', 'NumPy'],
@@ -214,7 +214,7 @@ export const workExperience: TimelineEntry[] = [
     title: 'Inventory Staff',
     org: 'Green River College Bookstore',
     period: 'Dec 2023 — Jun 2024',
-    location: 'Auburn, WA',
+    location: 'Auburn, Washington, United States',
     summary:
       'Tracked inventory in Excel, produced reports, and helped surface insights to improve sales.',
     tags: ['Microsoft Excel'],
@@ -228,7 +228,7 @@ export const organizations: TimelineEntry[] = [
     title: 'Web Developer',
     org: 'PERMIAS Nasional',
     period: 'Mar 2026 — present',
-    location: 'United States (national)',
+    location: 'United States',
     summary:
       'Builds and maintains the national organization’s web presence with modern front-end patterns and lightweight AI-assisted workflows.',
     bullets: [
@@ -243,7 +243,7 @@ export const organizations: TimelineEntry[] = [
     title: 'Vice President of Leadership',
     org: 'Green River College Phi Theta Kappa — Alpha Chi Beta',
     period: 'Sep 2024 — Jun 2025',
-    location: 'Auburn, WA',
+    location: 'Auburn, Washington, United States',
     summary: 'Co-led honor society programming, events, and chapter culture.',
     bullets: [
       'Co-organized 10+ campus events with 100+ attendees each.',
@@ -263,7 +263,7 @@ export const organizations: TimelineEntry[] = [
     title: 'Treasurer',
     org: 'Green River College Indonesian Student Organization',
     period: 'Apr 2024 — Jun 2025',
-    location: 'Auburn, WA',
+    location: 'Auburn, Washington, United States',
     summary: 'Owned budgeting, reporting, and sponsor conversations for ISO.',
     bullets: [
       'Funded the chapter’s flagship annual event ($5,000+ secured).',
@@ -283,7 +283,7 @@ export const organizations: TimelineEntry[] = [
     title: 'Secretary',
     org: 'Green River College Business Club',
     period: 'Dec 2023 — Jun 2025',
-    location: 'Auburn, WA',
+    location: 'Auburn, Washington, United States',
     summary:
       'Maintained workflows, quarterly schedules, and proposals connecting students with industry.',
     bullets: [
@@ -318,7 +318,7 @@ export const education: EducationBlock[] = [
     school: 'University of Washington, Seattle',
     unit: 'Paul G. Allen School of Computer Science & Engineering',
     period: '2025 — 2027',
-    location: 'Seattle, WA',
+    location: 'Seattle, Washington, United States',
     degree: 'Bachelor of Science — Computer Science',
     gpa: '3.65 / 4.0',
     honors: ["DubHacks Shark Tank 2025 Winner", "Dean's List"],
@@ -339,7 +339,7 @@ export const education: EducationBlock[] = [
     id: 'grc',
     school: 'Green River College',
     period: '2023 — 2025',
-    location: 'Auburn, WA',
+    location: 'Auburn, Washington, United States',
     degree: 'Associate in Science — Computer Science, Engineering, Physics',
     gpa: '3.98 / 4.0 — Graduated with Highest Honors',
     honors: [
@@ -364,7 +364,7 @@ export const education: EducationBlock[] = [
     id: 'pelangi',
     school: 'Pelangi Kasih Secondary School',
     period: '2018 — 2023',
-    location: 'Jakarta, IDN',
+    location: 'Jakarta, Indonesia',
     degree: 'Secondary (Science Stream)',
     gpa: '93.59 / 100 — Ranked 3rd in class',
     honors: [
