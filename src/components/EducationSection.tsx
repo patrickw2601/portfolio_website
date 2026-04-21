@@ -28,7 +28,7 @@ export function EducationSection() {
         {reduce ? (
           <div className="mt-10 space-y-0 divide-y divide-[var(--color-line)]">
             {education.map((block) => (
-              <article key={block.id} className="group py-10 transition-colors first:pt-2 hover:bg-ink-900/[0.02]">
+              <article key={block.id} className="py-10 first:pt-2">
                 {renderEducationBlock(block, reduce)}
               </article>
             ))}
@@ -48,7 +48,7 @@ export function EducationSection() {
               <motion.article
                 key={block.id}
                 variants={item}
-                className="group py-10 transition-colors first:pt-2 hover:bg-ink-900/[0.02]"
+                className="py-10 first:pt-2"
               >
                 {renderEducationBlock(block, reduce)}
               </motion.article>
@@ -73,7 +73,7 @@ function renderEducationBlock(block: (typeof education)[number], reduceMotion: b
       {logo}
       <div className="min-w-0 flex-1">
         <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
-          <h3 className="font-display text-lg font-semibold text-ink-900 transition-transform duration-300 group-hover:translate-x-0.5 md:text-xl">
+          <h3 className="font-display text-lg font-semibold text-ink-900 md:text-xl">
             {block.school}
           </h3>
           <p className="text-xs font-semibold tabular-nums text-ink-600">

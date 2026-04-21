@@ -46,7 +46,10 @@ export function MarqueeSkills({ className = '' }: MarqueeSkillsProps) {
       ) : null}
       <div className="flex w-max gap-8 animate-marquee text-xs font-semibold uppercase tracking-[0.18em] text-ink-700">
         {doubled.map((skill, index) => (
-          <span key={`${skill}-${index}`} className="whitespace-nowrap">
+          <span
+            key={`${skill}-${index}`}
+            className="whitespace-nowrap rounded-full border border-transparent px-2.5 py-1 transition-colors hover:border-[var(--color-line)] hover:bg-ink-900/[0.06]"
+          >
             {skill}
           </span>
         ))}

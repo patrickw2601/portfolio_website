@@ -139,7 +139,7 @@ export function Hero() {
 
       <div className="flow-section mt-12 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-[var(--color-line)] pt-10 sm:grid-cols-3 lg:grid-cols-5 md:mt-14">
         {site.stats.map((item) => (
-          <div key={item.label} className="transition-transform duration-200 hover:-translate-y-0.5">
+          <div key={item.label}>
             <p className="text-[11px] font-semibold uppercase tracking-wide text-ink-600">
               {item.label}
             </p>

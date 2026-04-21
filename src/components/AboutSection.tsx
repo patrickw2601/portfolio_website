@@ -35,7 +35,7 @@ export function AboutSection() {
             {site.interests.map((item) => (
               <li
                 key={item.title}
-                className="grid gap-2 py-7 transition-colors hover:bg-ink-900/[0.02] md:grid-cols-[minmax(0,160px)_1fr] md:items-start md:gap-8"
+                className="grid gap-2 py-7 md:grid-cols-[minmax(0,160px)_1fr] md:items-start md:gap-8"
               >
                 <span className="font-display text-sm font-semibold text-ink-900">{item.title}</span>
                 <p className="text-sm leading-relaxed text-ink-800">{item.blurb}</p>
@@ -57,7 +57,7 @@ export function AboutSection() {
               <motion.li
                 key={item.title}
                 variants={slide}
-                className="grid gap-2 py-7 transition-colors hover:bg-ink-900/[0.02] md:grid-cols-[minmax(0,160px)_1fr] md:items-start md:gap-8"
+                className="grid gap-2 py-7 md:grid-cols-[minmax(0,160px)_1fr] md:items-start md:gap-8"
               >
                 <span className="font-display text-sm font-semibold text-ink-900">{item.title}</span>
                 <p className="text-sm leading-relaxed text-ink-800">{item.blurb}</p>

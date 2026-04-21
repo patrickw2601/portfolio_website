@@ -162,7 +162,7 @@ export function TimelineSection({
                 <motion.article
                   key={entry.id}
                   variants={item}
-                  className={`py-8 transition-colors first:pt-3 hover:bg-ink-900/[0.02] md:py-9 md:first:pt-2 ${entry.isPlaceholder ? 'opacity-75' : ''}`}
+                  className={`py-8 first:pt-3 md:py-9 md:first:pt-2 ${entry.isPlaceholder ? 'opacity-75' : ''}`}
                 >
                   {renderEntry(entry)}
                 </motion.article>
@@ -215,7 +215,7 @@ function renderEntry(entry: TimelineEntry) {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-[rgb(12_12_12/0.1)] bg-ink-900/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-ink-800"
+                className="rounded-full border border-[rgb(12_12_12/0.1)] bg-ink-900/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-ink-800 transition-colors hover:border-ink-900/18 hover:bg-ink-900/[0.09]"
               >
                 {tag}
               </span>
