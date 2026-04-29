@@ -1,6 +1,6 @@
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
-import { site } from '../data/site'
+import { marqueeSkills } from '../data/site'
 
 type MarqueeSkillsProps = {
   className?: string
@@ -16,7 +16,7 @@ export function MarqueeSkills({ className = '' }: MarqueeSkillsProps) {
   const skew = useTransform(scrollYProgress, [0, 0.5, 1], ['-1.2deg', '0deg', '0.8deg'])
   const lift = useTransform(scrollYProgress, [0, 0.5, 1], [-4, 0, 2])
 
-  const doubled = [...site.techStack, ...site.techStack]
+  const doubled = [...marqueeSkills, ...marqueeSkills]
 
   return (
     <motion.div

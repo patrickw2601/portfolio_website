@@ -30,7 +30,7 @@ export const site = {
     'IELTS Band 8 · Duolingo English Test 150/160',
   ],
   languages: ['English', 'Bahasa Indonesia', '中文 (Mandarin)', 'Bahasa Melayu'],
-  hobbies: ['Puzzles', 'Billiards', 'Chess', 'Coffee chats'],
+  hobbies: ['Puzzles', 'Billiards', 'Chess'],
   softSkills: [
     'Learning',
     'Networking',
@@ -83,6 +83,7 @@ export const site = {
     'React Native',
     'Pytest',
     'Git',
+    'GitHub Actions',
   ],
   stats: [
     { value: '2+', label: 'Years work experience' },
@@ -155,6 +156,7 @@ export const workExperience: TimelineEntry[] = [
       'PostgreSQL',
       'Docker',
       'Kubernetes',
+      'AWS',
       'OpenAI',
       'FastAPI',
       'LangGraph',
@@ -162,6 +164,7 @@ export const workExperience: TimelineEntry[] = [
       'Ollama',
       'PyTorch',
       'GPU tracing',
+      'GitHub Actions',
     ],
     logoSrc: 'logos/deepiri.png',
   },
@@ -230,12 +233,13 @@ export const organizations: TimelineEntry[] = [
     period: 'Mar 2026 — present',
     location: 'United States',
     summary:
-      'Builds and maintains the national organization’s web presence with modern front-end patterns and lightweight AI-assisted workflows.',
+      'Embeds an AI chatbot assistant into the national site (Flask backend) and maintains the organization’s public web presence with modern front-end patterns.',
     bullets: [
+      'Embeds an AI chatbot assistant in the public website, including a Flask service for the assistant and integrations.',
       'Develops responsive pages and components with React, HTML, and CSS.',
       'Integrates AI tooling to speed up content iteration and accessibility checks.',
     ],
-    tags: ['React', 'HTML', 'CSS', 'AI'],
+    tags: ['React', 'HTML', 'CSS', 'Python', 'Flask', 'AI'],
     logoSrc: 'logos/permias.png',
   },
   {
@@ -384,6 +388,8 @@ export type Project = {
   summary: string
   features: string[]
   stack: string[]
+  /** Optional small gray line beside the title (e.g. internship context). */
+  contextNote?: string
 }
 
 export const projects: Project[] = [
@@ -391,13 +397,13 @@ export const projects: Project[] = [
     id: 'wallzy',
     title: 'Wallzy',
     summary:
-      'DubHacks 2025 build — mobile experience with FastAPI services and PostgreSQL, focused on reliable device connectivity.',
+      'DubHacks 2025 build — mobile experience with FastAPI services and PostgreSQL, focused on reliable device connectivity and JWT-authenticated API access. Continuing with DubHacks NEXT 2026.',
     features: [
       'Shipped a working prototype with a team of three in 24 hours at DubHacks.',
       'Improved RFID-emulator connection reliability by roughly 90%.',
       'DubHacks 2025 Shark Tank winner · DubHacks NEXT Batch 5 (Projects track).',
     ],
-    stack: ['React Native', 'JavaScript', 'FastAPI', 'PostgreSQL', 'HTML', 'CSS'],
+    stack: ['React Native', 'JavaScript', 'FastAPI', 'PostgreSQL', 'JWT', 'HTML', 'CSS'],
   },
   {
     id: 'ai-corp',
@@ -418,6 +424,7 @@ export const projects: Project[] = [
       'Vertex AI',
       'Docker',
     ],
+    contextNote: 'Part of PT. Sisindokom Lintasbuana internship',
   },
   {
     id: 'portfolio',
@@ -428,7 +435,7 @@ export const projects: Project[] = [
       'Bright kinetic system with accessible contrast',
       'Composable content layer for rapid updates',
     ],
-    stack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion'],
+    stack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion', 'GitHub Actions'],
   },
   {
     id: 'restaurant',
@@ -452,6 +459,7 @@ export const projects: Project[] = [
       'Polished client-facing UI',
     ],
     stack: ['Python', 'Flask', 'PostgreSQL', 'LangChain', 'Vertex AI'],
+    contextNote: 'Part of PT. Sisindokom Lintasbuana internship',
   },
   {
     id: 'schedule',
@@ -465,3 +473,28 @@ export const projects: Project[] = [
     stack: ['HTML', 'CSS', 'JavaScript'],
   },
 ]
+
+function collectMarqueeSkillLabels(): string[] {
+  const out = new Set<string>()
+  const add = (label: string) => {
+    const t = label.trim()
+    if (t) out.add(t)
+  }
+  for (const entry of workExperience) {
+    entry.tags?.forEach(add)
+  }
+  for (const entry of organizations) {
+    entry.tags?.forEach(add)
+  }
+  for (const project of projects) {
+    project.stack.forEach(add)
+  }
+  const list = Array.from(out).sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
+  if (list.length === 0) {
+    return [...site.techStack]
+  }
+  return list
+}
+
+/** Deduplicated skills from all role tags + org tags + project stacks; powers the hero marquee. */
+export const marqueeSkills = collectMarqueeSkillLabels()

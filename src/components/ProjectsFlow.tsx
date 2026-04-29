@@ -70,9 +70,16 @@ export function ProjectsFlow() {
 function renderProject(project: (typeof projects)[number], index: number) {
   return (
     <>
-      <div className="flex items-baseline justify-between gap-4">
-        <h3 className="font-display text-xl font-semibold text-ink-900 md:text-2xl">{project.title}</h3>
-        <span className="text-xs font-semibold tabular-nums text-ink-600">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+        <div className="flex min-w-0 flex-wrap items-baseline gap-x-2 gap-y-0.5">
+          <h3 className="font-display text-xl font-semibold text-ink-900 md:text-2xl">{project.title}</h3>
+          {project.contextNote ? (
+            <span className="text-[11px] font-normal font-sans normal-case tracking-normal text-ink-500 md:text-xs">
+              {project.contextNote}
+            </span>
+          ) : null}
+        </div>
+        <span className="shrink-0 text-xs font-semibold tabular-nums text-ink-600">
           {String(index + 1).padStart(2, '0')}
         </span>
       </div>
