@@ -193,7 +193,7 @@ export const workExperience: TimelineEntry[] = [
     id: 'manulife',
     title: 'Information Technology Intern',
     org: 'PT. Manulife Indonesia (XO Network)',
-    period: 'Jul 2024 — Aug 2025',
+    period: 'Jul 2024 — Aug 2024',
     location: 'Jakarta, Indonesia',
     summary:
       'Developed campaign websites and supported internal IT operations and device management.',
