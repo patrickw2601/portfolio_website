@@ -123,7 +123,7 @@ export const workExperience: TimelineEntry[] = [
     org: 'Amazon Web Services (AWS)',
     period: 'Jun 2026 — Sep 2026',
     location: 'Seattle, Washington, United States',
-    summary: 'Incoming summer 2026.',
+    summary: 'Accepted offer for a summer 2026 software development engineer internship.',
     logoSrc: 'logos/aws.png',
   },
   {
@@ -133,10 +133,10 @@ export const workExperience: TimelineEntry[] = [
     period: 'Sep 2025 — present',
     location: 'Seattle, Washington, United States',
     summary:
-      'Supports day-to-day dining operations for student-athletes: service flow, station readiness, and a high-traffic meal environment.',
+      'Supported day-to-day dining operations for student-athletes: service flow, station readiness, and a high-traffic meal environment.',
     bullets: [
-      'Keeps service lines organized during peak meal windows.',
-      'Coordinates with kitchen and front-of-house so athletes move through quickly between practices.',
+      'Kept service lines organized during peak meal windows.',
+      'Coordinated with kitchen and front-of-house so athletes moved through quickly between practices.',
     ],
     tags: ['Customer service', 'Teamwork', 'Operations'],
     logoSrc: 'logos/uw.png',
@@ -145,7 +145,7 @@ export const workExperience: TimelineEntry[] = [
     id: 'deepiri',
     title: 'AI Software Engineer Intern',
     org: 'Deepiri',
-    period: 'Dec 2025 — Apr 2026',
+    period: 'Dec 2025 — May 2026',
     location: 'Pittsburgh, Pennsylvania, United States (remote)',
     summary:
       'Built backend microservices integrated with LangChain / LangGraph agents for a SaaS product.',
@@ -227,17 +227,42 @@ export const workExperience: TimelineEntry[] = [
 
 export const organizations: TimelineEntry[] = [
   {
+    id: 'dubhacks-next',
+    title: 'Project Tracks Member · Wallzy',
+    org: 'DubHacks NEXT',
+    period: 'Jan 2026 — May 2026',
+    location: 'Seattle, Washington, United States',
+    summary:
+      'Advanced the DubHacks NEXT cohort project Wallzy through mobile app engineering (React Native), backend engineering and PostgreSQL with FastAPI, JWT-authenticated APIs, and LLM-assisted logic in server-side flows.',
+    bullets: [
+      'Built and iterated on the Wallzy mobile client while pairing with FastAPI services and PostgreSQL.',
+      'Implemented JWT-backed auth and structured API layers for reliable device and session flows.',
+      'Integrated LLM capabilities into FastAPI route logic for smarter, context-aware backend behavior.',
+    ],
+    tags: [
+      'Python',
+      'React Native',
+      'PostgreSQL',
+      'FastAPI',
+      'JavaScript',
+      'HTML',
+      'CSS',
+      'JWT',
+    ],
+    logoSrc: 'logos/dubhacks-next.png',
+  },
+  {
     id: 'permias-nasional',
     title: 'Web Developer',
     org: 'PERMIAS Nasional',
     period: 'Mar 2026 — present',
     location: 'United States',
     summary:
-      'Embeds an AI chatbot assistant into the national site (Flask backend) and maintains the organization’s public web presence with modern front-end patterns.',
+      'Embedded an AI chatbot assistant into the national site (Flask backend) and maintained the organization’s public web presence with modern front-end patterns.',
     bullets: [
-      'Embeds an AI chatbot assistant in the public website, including a Flask service for the assistant and integrations.',
-      'Develops responsive pages and components with React, HTML, and CSS.',
-      'Integrates AI tooling to speed up content iteration and accessibility checks.',
+      'Embedded an AI chatbot assistant in the public website, including a Flask service for the assistant and integrations.',
+      'Developed responsive pages and components with React, HTML, and CSS.',
+      'Integrated AI tooling to speed up content iteration and accessibility checks.',
     ],
     tags: ['React', 'HTML', 'CSS', 'Python', 'Flask', 'AI'],
     logoSrc: 'logos/permias.png',
@@ -271,7 +296,7 @@ export const organizations: TimelineEntry[] = [
     summary: 'Owned budgeting, reporting, and sponsor conversations for ISO.',
     bullets: [
       'Funded the chapter’s flagship annual event ($5,000+ secured).',
-      'Bi-weekly syncs with student government on spend and forecasts.',
+      'Held bi-weekly syncs with student government on spend and forecasts.',
       'Grew year-end reserves ~50% versus the prior year.',
     ],
     tags: [
