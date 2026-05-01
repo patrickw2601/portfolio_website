@@ -93,10 +93,9 @@ export const site = {
     { value: '2', label: 'Countries' },
   ],
   orgStats: [
-    { value: '4', label: 'Leadership roles' },
+    { value: '5', label: 'Club roles' },
     { value: '1000+', label: 'Students impacted' },
     { value: '30+', label: 'Events organized' },
-    { value: '2', label: 'Years leading' },
   ],
 } as const
 
@@ -229,7 +228,7 @@ export const organizations: TimelineEntry[] = [
   {
     id: 'dubhacks-next',
     title: 'Project Tracks Member · Wallzy',
-    org: 'DubHacks NEXT',
+    org: 'DubHacks NEXT · Batch 5',
     period: 'Jan 2026 — May 2026',
     location: 'Seattle, Washington, United States',
     summary:
@@ -499,17 +498,37 @@ export const projects: Project[] = [
   },
 ]
 
+/** Soft-skill labels on roles/orgs — omit from the hero tech marquee. */
+const MARQUEE_EXCLUDE_TAGS = new Set([
+  'Customer service',
+  'Teamwork',
+  'Operations',
+  'Team leadership',
+  'Event planning',
+  'Public speaking',
+  'Strategic planning',
+  'Money management',
+  'Reporting',
+  'Event coordination',
+  'Networking',
+  'Proposal writing',
+])
+
 function collectMarqueeSkillLabels(): string[] {
   const out = new Set<string>()
   const add = (label: string) => {
     const t = label.trim()
     if (t) out.add(t)
   }
+  const addTagIfTechnical = (label: string) => {
+    const t = label.trim()
+    if (t && !MARQUEE_EXCLUDE_TAGS.has(t)) add(t)
+  }
   for (const entry of workExperience) {
-    entry.tags?.forEach(add)
+    entry.tags?.forEach(addTagIfTechnical)
   }
   for (const entry of organizations) {
-    entry.tags?.forEach(add)
+    entry.tags?.forEach(addTagIfTechnical)
   }
   for (const project of projects) {
     project.stack.forEach(add)
@@ -521,5 +540,5 @@ function collectMarqueeSkillLabels(): string[] {
   return list
 }
 
-/** Deduplicated skills from all role tags + org tags + project stacks; powers the hero marquee. */
+/** Deduplicated technical skills (role/org tags minus soft skills, plus all project stacks); powers the hero marquee. */
 export const marqueeSkills = collectMarqueeSkillLabels()
