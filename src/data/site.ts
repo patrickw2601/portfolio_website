@@ -12,13 +12,9 @@ export const site = {
   locations: 'Seattle, Washington, United States · Jakarta, Indonesia',
   heroLead:
     'Passionate builder focused on AI systems, full-stack products, cybersecurity, and cloud software.',
-  resumeUrl: 'https://www.overleaf.com/read/zzqmnktnrpjf#90fd0f',
   /** Set your public email for mailto links */
-  contactEmail: 'you@example.com',
-  social: [
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/' },
-    { label: 'GitHub', href: 'https://github.com/' },
-  ] as { label: string; href: string }[],
+  contactEmail: 'patrickwijaya550@gmail.com',
+  social: [{ label: 'LinkedIn', href: 'https://www.linkedin.com/' }] as { label: string; href: string }[],
   about:
     'Tech enthusiast exploring the edges of intelligent systems and reliable software. Currently pursuing a Bachelor of Science in Computer Science at the University of Washington, Seattle.',
   certifications: [
@@ -147,7 +143,7 @@ export const workExperience: TimelineEntry[] = [
     period: 'Dec 2025 — May 2026',
     location: 'Pittsburgh, Pennsylvania, United States (remote)',
     summary:
-      'Built backend microservices integrated with LangChain / LangGraph agents for a SaaS product.',
+      'Built backend microservices for an AI/ML platform: model-serving endpoints, Poetry-backed dependency hygiene, and containerized deploys.',
     tags: [
       'Python',
       'Poetry',
@@ -158,8 +154,6 @@ export const workExperience: TimelineEntry[] = [
       'AWS',
       'OpenAI',
       'FastAPI',
-      'LangGraph',
-      'LangChain',
       'Ollama',
       'PyTorch',
       'GPU tracing',
@@ -358,6 +352,8 @@ export const education: EducationBlock[] = [
       'CSE 332 — Data Structures & Parallelism',
       'CSE 333 — Systems Programming',
       'CSE 391 — System & Software Tools',
+      'CSE 452 — Distributed Systems',
+      'CSE 453 — Data Center Systems',
       'CSE 473 — Artificial Intelligence',
       'CSE 484 — Computer Security',
     ],

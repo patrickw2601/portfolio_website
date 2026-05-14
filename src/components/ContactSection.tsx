@@ -22,9 +22,6 @@ export function ContactSection() {
           <MagneticButton href={mail} variant="primary">
             Email
           </MagneticButton>
-          <MagneticButton href={site.resumeUrl} external variant="ghost">
-            Résumé
-          </MagneticButton>
         </div>
 
         <div className="mt-12 border-t border-[var(--color-line)] pt-8">

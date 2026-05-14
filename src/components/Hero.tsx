@@ -115,7 +115,6 @@ export function Hero() {
           {(
             [
               { href: '#projects', variant: 'primary' as const, label: 'Work', external: false },
-              { href: site.resumeUrl, variant: 'ghost' as const, label: 'Résumé', external: true },
               { href: '#contact', variant: 'ghost' as const, label: 'Email', external: false },
             ] as const
           ).map((btn) => (
