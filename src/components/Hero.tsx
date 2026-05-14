@@ -7,8 +7,7 @@ import {
 } from 'framer-motion'
 import { useRef } from 'react'
 import { site } from '../data/site'
-import { easeOutExpo, springSnappy } from '../lib/motionPresets'
-import { MagneticButton } from './MagneticButton'
+import { easeOutExpo } from '../lib/motionPresets'
 import { MarqueeSkills } from './MarqueeSkills'
 import { MotionDivider } from './MotionDivider'
 
@@ -101,36 +100,6 @@ export function Hero() {
         >
           <p className="max-w-full text-pretty break-words">{site.school}</p>
           <p className="max-w-full text-pretty break-words text-ink-600">{site.locations}</p>
-        </motion.div>
-
-        <motion.div
-          className="mt-8 flex flex-wrap gap-3 md:gap-4"
-          initial="hidden"
-          animate="show"
-          variants={{
-            hidden: {},
-            show: { transition: { staggerChildren: 0.07, delayChildren: 0.4 } },
-          }}
-        >
-          {(
-            [
-              { href: '#projects', variant: 'primary' as const, label: 'Work', external: false },
-              { href: '#contact', variant: 'ghost' as const, label: 'Email', external: false },
-            ] as const
-          ).map((btn) => (
-            <motion.span
-              key={btn.label}
-              variants={{
-                hidden: { opacity: 0, y: 24, scale: 0.88, rotate: -2 },
-                show: { opacity: 1, y: 0, scale: 1, rotate: 0 },
-              }}
-              transition={springSnappy}
-            >
-              <MagneticButton href={btn.href} variant={btn.variant} external={btn.external}>
-                {btn.label}
-              </MagneticButton>
-            </motion.span>
-          ))}
         </motion.div>
       </div>
 
