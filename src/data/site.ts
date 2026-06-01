@@ -140,7 +140,7 @@ export const workExperience: TimelineEntry[] = [
     id: 'deepiri',
     title: 'AI Software Engineer Intern',
     org: 'Deepiri',
-    period: 'Dec 2025 — May 2026',
+    period: 'Dec 2025 — Jun 2026',
     location: 'Pittsburgh, Pennsylvania, United States (remote)',
     summary:
       'Built backend microservices for an AI/ML platform: model-serving endpoints, Poetry-backed dependency hygiene, and containerized deploys.',
@@ -157,7 +157,6 @@ export const workExperience: TimelineEntry[] = [
       'Ollama',
       'PyTorch',
       'GPU tracing',
-      'GitHub Actions',
     ],
     logoSrc: 'logos/deepiri.png',
   },
@@ -220,6 +219,22 @@ export const workExperience: TimelineEntry[] = [
 
 export const organizations: TimelineEntry[] = [
   {
+    id: 'permias-nasional',
+    title: 'Web Developer',
+    org: 'PERMIAS Nasional',
+    period: 'Mar 2026 — present',
+    location: 'United States',
+    summary:
+      'Embedded an AI chatbot assistant into the national site (Flask backend) and maintained the organization’s public web presence with modern front-end patterns.',
+    bullets: [
+      'Embedded an AI chatbot assistant in the public website, including a Flask service for the assistant and integrations.',
+      'Developed responsive pages and components with React, HTML, and CSS.',
+      'Integrated AI tooling to speed up content iteration and accessibility checks.',
+    ],
+    tags: ['React', 'HTML', 'CSS', 'Python', 'Flask', 'AI', 'GitHub Actions'],
+    logoSrc: 'logos/permias.png',
+  },
+  {
     id: 'dubhacks-next',
     title: 'Project Tracks Member · Wallzy',
     org: 'DubHacks NEXT · Batch 5',
@@ -243,22 +258,6 @@ export const organizations: TimelineEntry[] = [
       'JWT',
     ],
     logoSrc: 'logos/dubhacks-next.png',
-  },
-  {
-    id: 'permias-nasional',
-    title: 'Web Developer',
-    org: 'PERMIAS Nasional',
-    period: 'Mar 2026 — present',
-    location: 'United States',
-    summary:
-      'Embedded an AI chatbot assistant into the national site (Flask backend) and maintained the organization’s public web presence with modern front-end patterns.',
-    bullets: [
-      'Embedded an AI chatbot assistant in the public website, including a Flask service for the assistant and integrations.',
-      'Developed responsive pages and components with React, HTML, and CSS.',
-      'Integrated AI tooling to speed up content iteration and accessibility checks.',
-    ],
-    tags: ['React', 'HTML', 'CSS', 'Python', 'Flask', 'AI'],
-    logoSrc: 'logos/permias.png',
   },
   {
     id: 'ptk',
